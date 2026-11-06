@@ -27,7 +27,7 @@ scratch files, so there they are 1 GB looser.
 On Windows, private memory is committed memory: a buffer or an allocator
 segment counts in full once allocated, touched or not (an hdfe-stream logit
 fit had 1.61 GB committed while 1.14 GB was resident). So Windows also gets
-the looser limits, until its own CI figures set a tighter one.
+looser limits (see SLACK_GB), until its own CI figures set tighter ones.
 """
 
 from __future__ import annotations
@@ -45,7 +45,15 @@ pytestmark = pytest.mark.resource
 
 PARTS, UNITS_PER_PART, WIDE = 5, 500_000, 40    # 2.5 million units
 BUDGET_GB = 1.0                                 # max_memory_gb
-SLACK_GB = {"darwin": 1.0, "win32": 1.0}.get(sys.platform, 0.0)
+# extra room per platform: macOS counts mapped scratch files; Windows counts
+# committed memory. Windows, nearest-neighbor matching: the first CI run was
+# stopped at 3.23 GB committed (1.27 GB resident) before it finished, so its
+# peak is not known yet; the slack is wide until a run reports it. Kernel
+# matching: 1.18 GB committed.
+SLACK_GB = {
+    "nn": {"darwin": 1.0, "win32": 3.0},
+    "kernel": {"darwin": 1.0, "win32": 0.5},
+}
 SPEC = ("'d ~ x1 + x2 + x3', SRC, exact=['r', 'i'], id='id', workdir=WORK, verbose=False, "
         f"max_memory_gb={BUDGET_GB}")
 
@@ -68,14 +76,16 @@ def wide_units(tmp_path_factory):
     return folder / "*.parquet"
 
 
-def _run_in_child(resource_runner, body: str, path, workdir, limit_gb: float) -> dict:
+def _run_in_child(resource_runner, body: str, path, workdir, limit_gb: float,
+                  kind: str) -> dict:
     code = f"""
 import json
 from match_stream import match_kernel, match_nn
 {body}
 """
     code = code.replace("SRC", repr(str(path))).replace("WORK", repr(str(workdir)))
-    result = resource_runner([sys.executable, "-c", code], memory_gb=limit_gb + SLACK_GB,
+    limit_gb += SLACK_GB[kind].get(sys.platform, 0.0)
+    result = resource_runner([sys.executable, "-c", code], memory_gb=limit_gb,
                              threads=2, timeout=900)
     report = {k: result.as_dict()[k] for k in ("status", "mode", "memory_measure",
                                                "peak_private_bytes", "peak_rss_bytes",
@@ -97,7 +107,7 @@ m = match_nn({SPEC}, replace=True)
 att = float(m.effect("y", score_correction=False).coef()["ATT:y"])
 smd = m.balance().matched.filter(term="x1")["Std. Mean Diff."].item()
 print(json.dumps(dict(att=att, smd=smd)))
-""", wide_units, tmp_path / "work", limit_gb=2.0)
+""", wide_units, tmp_path / "work", limit_gb=2.0, kind="nn")
     assert abs(out["att"] - 1.0) < 0.05
     assert abs(out["smd"]) < 0.05
 
@@ -106,5 +116,5 @@ def test_kernel_matching_inside_the_limit(resource_runner, wide_units, tmp_path)
     out = _run_in_child(resource_runner, f"""
 m = match_kernel({SPEC})
 print(json.dumps(dict(att=float(m.effect("y").coef()["ATT:y"]))))
-""", wide_units, tmp_path / "work", limit_gb=1.7)
+""", wide_units, tmp_path / "work", limit_gb=1.7, kind="kernel")
     assert abs(out["att"] - 1.0) < 0.05

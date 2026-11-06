@@ -138,6 +138,13 @@ Matching followed by the effect and its standard error, for design A
 | G with the bias adjustment | 82 s | 3.0 GB |
 | fastmatch (faiss), G with its bias-corrected standard error | 197 s | 2.7 GB |
 
+R Matching's Abadie-Imbens standard errors give the same estimates and
+standard errors as match-stream's, to about 1e-15, with and without
+`n_variance_matches=1` and the bias adjustment. At 100,000 units (match-stream
+against R) they take 0.05 s against 54 s, 0.07 s against 307 s, and 0.09 s
+against 333 s for the bias adjustment. R exceeds 30 minutes at 1 million
+units in all three.
+
 At 100 million units the first three rows take 51 s, 54 s and 113 to 120 s,
 and G with the bias adjustment takes 865 s and 27 GB. The fitted score's
 correction needs more memory than the 32 GB machine has at that size, and
@@ -215,6 +222,9 @@ lines. Peak disk, which only the by-stratum runs use, is in
 Every library is asked for the same design, and the estimate's largest
 difference from match-stream's is recorded (`max_abs_diff` in the CSVs):
 
+- R Matching's Abadie-Imbens standard errors agree with match-stream's to
+  about 1e-15 (every variant, up to 100,000 units, the largest size it
+  finishes).
 - MatchIt, and the SciPy k-d tree, agree with match-stream's estimate to
   about 1e-14 in every design they support, at every size. The by-stratum
   path agrees to about 1e-15.

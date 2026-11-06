@@ -134,7 +134,7 @@ Small runs, for correctness only, give these results:
 
 - MatchIt's estimates agree to about 1e-15 on every design.
 - At 100,000 units, R Matching's Abadie–Imbens standard error (with
-  `Var.calc = 1`) took 510 s; match-stream's, the same to 1e-15, took 0.2 s.
+  `Var.calc = 1`) took 307 s; match-stream's, the same to 1e-15, took 0.07 s.
 
 ## Install
 

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "match-stream"
-version = "0.1.0.dev0"
+version = "0.1.0"
 description = "Out-of-core matching: nearest-neighbor (with or without replacement), calipers, exact strata, Mahalanobis, kernel and coarsened exact matching, with Abadie-Imbens inference"
 readme = "README.md"
 license = "MIT"
@@ -13,7 +13,7 @@ authors = [{ name = "Lee Tucker" }]
 keywords = ["econometrics", "matching", "propensity score", "nearest neighbor", "Mahalanobis",
             "coarsened exact matching", "Abadie-Imbens", "treatment effects", "out-of-core"]
 classifiers = [
-    "Development Status :: 2 - Pre-Alpha",
+    "Development Status :: 3 - Alpha",
     "Intended Audience :: Science/Research",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",

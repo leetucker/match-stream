@@ -73,7 +73,6 @@ See [How it works](how_it_works.md).
 pip install match-stream
 ```
 
-(Not on PyPI yet; install from the repository with `pip install -e .`.)
 
 ```{toctree}
 :hidden:

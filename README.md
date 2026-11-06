@@ -22,9 +22,9 @@ m.effect("earnings").summary()          # the ATT, Abadie-Imbens standard errors
 m.matches().sink_parquet("pairs.parquet")
 ```
 
-**Status: in development** (version 0.1.0.dev0, not yet on PyPI). The
-designs, the inference and the documentation are complete and tested. The
-benchmarks are written and wait for a full run (see Performance).
+**Status: version 0.1.0, the first release.** The designs, the inference and
+the documentation are tested against MatchIt, Matching, Stata's teffects, kmatch and
+psmatch2, and the benchmarks are in the documentation (see Performance).
 
 ## What it does
 
@@ -139,14 +139,15 @@ Small runs, for correctness only, give these results:
 
 ## Install
 
-match-stream is not on PyPI yet. Install it from the repository:
-
 ```bash
-pip install git+https://github.com/leetucker/match-stream
+pip install match-stream
 ```
 
 Python 3.10 or later. It depends on hdfe-stream (with its formula extra),
-stream-limits, Polars, NumPy, numba, SciPy and pyarrow.
+stream-limits, Polars, NumPy, numba, SciPy and pyarrow. On Python 3.15,
+pyfixest (which hdfe-stream's formula extra brings in) has no wheels yet: it
+builds from source with a Rust toolchain and
+`PYO3_USE_ABI3_FORWARD_COMPATIBILITY=1` set; everything else installs from wheels.
 
 ## Documentation
 

@@ -38,7 +38,7 @@ from .simulate import simulate_matching
 try:
     __version__ = _version("match-stream")
 except PackageNotFoundError:  # pragma: no cover
-    __version__ = "0.1.0.dev0"
+    __version__ = "0.1.0"
 
 __all__ = ["BalanceTable", "CEMSet", "CrossValidation", "KernelSet", "MatchResult", "MatchSet",
            "PairDistance", "__version__", "match_cem", "match_kernel", "match_nn",

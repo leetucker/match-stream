@@ -26,8 +26,10 @@ Windows. On macOS it measures resident memory, which counts the mapped
 scratch files, so there they are 1 GB looser.
 On Windows, private memory is committed memory: a buffer or an allocator
 segment counts in full once allocated, touched or not (an hdfe-stream logit
-fit had 1.61 GB committed while 1.14 GB was resident). So Windows also gets
-looser limits (see SLACK_GB), until its own CI figures set tighter ones.
+fit had 1.61 GB committed while 1.14 GB was resident). So on Windows
+nearest-neighbor matching has a limit 2.4 GB looser (CI measured 3.50 GB
+committed, with 1.58 GB resident); kernel matching measured 1.26 GB and has
+the Linux limit.
 """
 
 from __future__ import annotations
@@ -46,13 +48,13 @@ pytestmark = pytest.mark.resource
 PARTS, UNITS_PER_PART, WIDE = 5, 500_000, 40    # 2.5 million units
 BUDGET_GB = 1.0                                 # max_memory_gb
 # extra room per platform: macOS counts mapped scratch files; Windows counts
-# committed memory. Windows, nearest-neighbor matching: the first CI run was
-# stopped at 3.23 GB committed (1.27 GB resident) before it finished, so its
-# peak is not known yet; the slack is wide until a run reports it. Kernel
-# matching: 1.18 GB committed.
+# committed memory. CI peaks on Windows, with the limits they give: nearest-
+# neighbor matching 3.23 GB (stopped there) and 3.50 GB, limit 4.4 GB; kernel
+# matching 1.18 and 1.26 GB, limit 1.7 GB. Holding the data would add about
+# 1 GB.
 SLACK_GB = {
-    "nn": {"darwin": 1.0, "win32": 3.0},
-    "kernel": {"darwin": 1.0, "win32": 0.5},
+    "nn": {"darwin": 1.0, "win32": 2.4},
+    "kernel": {"darwin": 1.0, "win32": 0.0},
 }
 SPEC = ("'d ~ x1 + x2 + x3', SRC, exact=['r', 'i'], id='id', workdir=WORK, verbose=False, "
         f"max_memory_gb={BUDGET_GB}")

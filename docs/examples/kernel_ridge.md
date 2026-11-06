@@ -1,7 +1,7 @@
 # Kernel and ridge matching
 
 Each treated unit is compared with a kernel-weighted average of the
-controls of its stratum within one bandwidth of its score. Ridge matching
+controls of its stratum within one bandwidth of its propensity score. Ridge matching
 replaces the average with Frölich's (2004) ridge-regularized local-linear
 fit. The default bandwidth (`"pair_distance"`) is set from the 1:1
 nearest-neighbor distances; `CrossValidation(outcome=)` chooses it by

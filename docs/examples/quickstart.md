@@ -1,7 +1,7 @@
 # Quickstart
 
-1:1 nearest-neighbor matching on a propensity score fitted by hdfe-stream's
-`feglm_stream`, with replacement, within the 20 exact strata of `r` x `i`,
+1:1 nearest-neighbor matching on a propensity score (a logit of the treatment
+on the covariates, fitted by hdfe-stream's `feglm_stream`), with replacement, within the 20 exact strata of `r` x `i`,
 with a caliper of 0.2 standard deviations of the score.
 Then the balance table and the ATT. The simulated effect is 1 for everyone.
 

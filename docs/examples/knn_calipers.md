@@ -1,7 +1,8 @@
 # k nearest neighbors
 
-Three matches per treated unit with replacement, ties kept, a caliper on
-the score and one on `x1`. Units the calipers leave short of three matches
+Nearest-neighbor matching on the propensity score with three matches per
+treated unit, with replacement, ties kept, a caliper on the score and one on
+`x1`. Units the calipers leave short of three matches
 are kept by default, or dropped with `min_matches=3`. Without
 replacement and k = 2, matching in rounds (the default) against one pass
 (`match_in_rounds=False`).

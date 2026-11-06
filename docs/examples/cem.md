@@ -1,6 +1,7 @@
 # Coarsened exact matching
 
-Each covariate is cut into five equal-width bins, and units match exactly
+Coarsened exact matching uses no propensity score and no distance. Each
+covariate is cut into five equal-width bins, and units match exactly
 on the bins and on `r` and `i`. A cell with both treated and control units
 is matched, and weighted so the matched controls sum to the matched treated.
 

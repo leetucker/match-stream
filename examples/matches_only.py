@@ -1,6 +1,7 @@
-"""Matches only, no outcome: greedy 1:1 matching without replacement within
-exact strata, with calipers on the score and on two covariates, written to
-Parquet. The score model absorbs a fixed effect (after "|")."""
+"""Matches only, no outcome: greedy 1:1 nearest-neighbor matching on the
+propensity score, without replacement, within exact strata, with calipers on
+the score and on two covariates, written to Parquet. The score model (a logit)
+absorbs a fixed effect (after "|")."""
 
 import tempfile
 from pathlib import Path

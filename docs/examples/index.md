@@ -1,7 +1,13 @@
 # Examples
 
 Each page mirrors a script in the repository's `examples/` directory and
-shows its output. Run the scripts from the repository's root:
+shows its output. "Matching" means different things: most pages use
+nearest-neighbor matching on a propensity score (a logit of the treatment on
+the covariates), and the titles say when one uses another method
+([Mahalanobis](mahalanobis.md), [kernel and ridge](kernel_ridge.md),
+[coarsened exact](cem.md)). To choose among them, see
+[Choosing a matching method](../choosing.md). Run the scripts from the
+repository's root:
 
 ```bash
 python examples/quickstart.py
@@ -10,12 +16,12 @@ python examples/quickstart.py
 | Page | What it shows |
 |---|---|
 | [Quickstart](quickstart.md) | 1:1 matching on a fitted score with replacement, exact strata, a caliper; balance; the ATT with Abadie-Imbens SEs |
-| [Matches only](matches_only.md) | Greedy 1:1 without replacement, calipers on the score and covariates, a score model with absorbed fixed effects, pairs to Parquet |
-| [k nearest neighbors](knn_calipers.md) | k = 3 with ties and calipers; `min_matches`; rounds or one pass without replacement |
-| [Mahalanobis matching](mahalanobis.md) | Matching on the covariates within strata |
+| [Matches only](matches_only.md) | Greedy 1:1 nearest-neighbor matching on the propensity score, without replacement, calipers on the score and covariates, a score model with absorbed fixed effects, pairs to Parquet |
+| [k nearest neighbors](knn_calipers.md) | k = 3 on the propensity score, with ties and calipers; `min_matches`; rounds or one pass without replacement |
+| [Mahalanobis matching](mahalanobis.md) | Nearest-neighbor matching on the covariates, with no propensity score, within strata |
 | [Kernel and ridge matching](kernel_ridge.md) | The default bandwidth, cross-validation, influence-function SEs |
 | [Coarsened exact matching](cem.md) | Cells, weights, balance and the effect |
-| [Effects and standard errors](effects.md) | Abadie-Imbens SEs, `n_variance_matches`, bias adjustment, the ATE, influence-function SEs clustered on the pair or unit |
+| [Effects and standard errors](effects.md) | When to use which standard error: Abadie-Imbens SEs, `n_variance_matches`, bias adjustment, the ATE, influence-function SEs clustered on the pair or unit |
 | [Out of core](out_of_core.md) | A million units in Parquet files, matched a stratum batch at a time |
 
 ## The simulated data

@@ -1,10 +1,16 @@
 # Matches only
 
-The case match-stream was first built for: greedy 1:1 matching without
-replacement, exact strata, calipers on the score and on covariates, and no
-outcome. The result is the pairs, written to Parquet. The score model
-absorbs a fixed effect (`| i`), so it is fitted out of core by
-`feglm_stream`. `|` is never used for exact strata: those go in `exact=`.
+The case match-stream was first built for: greedy 1:1 nearest-neighbor
+matching on the propensity score, without replacement, within exact strata,
+with calipers on the score and on two covariates, and no outcome. The result
+is the pairs, written to Parquet.
+
+The propensity score is the fitted probability of treatment from a logit of
+`d` on `x1 + x2 + x3`. The model absorbs a fixed effect (`| i`), so it is
+fitted out of core by `feglm_stream`. `|` is never used for exact strata:
+those go in `exact=`. To match on the covariates themselves instead, see
+[Mahalanobis matching](mahalanobis.md); for the other methods, see
+[Choosing a matching method](../choosing.md).
 
 ```{literalinclude} ../../examples/matches_only.py
 :language: python

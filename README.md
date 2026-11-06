@@ -1,8 +1,9 @@
 # match-stream
 
-Matching on data larger than memory. It does nearest-neighbor matching
-with or without replacement, calipers on the score and on covariates, exact
-strata, and Mahalanobis, kernel, ridge and coarsened exact matching. It also
+Matching on data larger than memory. It does nearest-neighbor matching, on
+a propensity score or on the covariates themselves, with or without
+replacement, calipers on the score and on covariates, exact strata, and
+kernel, ridge and coarsened exact matching. It also
 gives balance diagnostics, and treatment effects with Abadie–Imbens or
 clustered standard errors.
 

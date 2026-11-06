@@ -1,6 +1,7 @@
 # Out of core
 
-A million units in four Parquet files, never loaded at once. The score
+Nearest-neighbor matching on a propensity score for a million units in four
+Parquet files, never loaded at once. The score
 model is fitted by `feglm_stream` out of core, the strata are matched a
 batch at a time (`memory="by_stratum"`, memory bounded by the largest
 stratum), and the pairs are streamed back to Parquet.

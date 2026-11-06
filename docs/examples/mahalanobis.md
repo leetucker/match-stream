@@ -1,8 +1,10 @@
 # Mahalanobis matching
 
-Matching on the covariates themselves. The Mahalanobis distance uses
-the covariance pooled within the treatment groups, within exact
-strata, with a caliper on `x1`.
+Nearest-neighbor matching on the covariates themselves, with no propensity
+score: each treated unit takes the control closest in Mahalanobis distance.
+The distance uses the covariance pooled within the treatment groups, within
+exact strata, with a caliper on `x1`. With more than one continuous covariate,
+the bias adjustment in [Effects](effects.md) is advised.
 
 ```{literalinclude} ../../examples/mahalanobis.py
 :language: python

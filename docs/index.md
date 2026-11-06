@@ -1,8 +1,9 @@
 # match-stream
 
-Matching on data larger than memory: nearest-neighbor matching with or
-without replacement, calipers on the score and on covariates, exact strata,
-Mahalanobis, kernel, ridge and coarsened exact matching, balance diagnostics,
+Matching on data larger than memory: nearest-neighbor matching, on a
+propensity score or on the covariates themselves, with or without
+replacement, calipers on the score and on covariates, exact strata, kernel,
+ridge and coarsened exact matching, balance diagnostics,
 and treatment effects with Abadie–Imbens standard errors. Results are tested
 against R's MatchIt and Matching and Stata's teffects and kmatch.
 
@@ -17,6 +18,8 @@ m.matches().sink_parquet("pairs.parquet")
 ```
 
 ## When to use this, and when not to
+
+To choose a method, see [Choosing a matching method](choosing.md).
 
 Use match-stream when the data are large (tens of millions of rows and up,
 or more than fits in memory) and you need more than plain 1:1 matching on
@@ -76,6 +79,7 @@ pip install match-stream
 :hidden:
 :caption: Guide
 
+choosing
 examples/index
 how_it_works
 resources

@@ -1,0 +1,38 @@
+{
+  "versions": {
+    "R": "R version 4.3.3 (2024-02-29)",
+    "MatchIt": "4.5.5",
+    "sandwich": "3.1.0"
+  },
+  "nn_ps_wor_largest": {
+    "desc": "lm(y ~ d, match.data, weights), vcovCL(~subclass)",
+    "vce": {
+      "CRV1": "subclass"
+    },
+    "est": 0.9846172310688693,
+    "se": 0.02211433867930332
+  },
+  "nn_ps_rep": {
+    "desc": "lm(y ~ d, get_matches, weights), vcovCL(~subclass)",
+    "vce": {
+      "CRV1": "subclass"
+    },
+    "est": 0.9601736166344537,
+    "se": 0.02768129535851131
+  },
+  "nn_ps_rep_2way": {
+    "desc": "fixest::feols(y ~ d, get_matches, weights), cluster subclass + id",
+    "vce": {
+      "CRV1": "subclass+id"
+    },
+    "est": 0.9601736166343415,
+    "se": 0.03295452152318862,
+    "fixest": "0.14.2"
+  },
+  "cem5": {
+    "desc": "lm(y ~ d, match.data, weights), vcovHC HC1",
+    "vce": "if",
+    "est": 1.066725778834721,
+    "se": 0.02670279717926916
+  }
+}

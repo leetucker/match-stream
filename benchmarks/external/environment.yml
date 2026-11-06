@@ -1,0 +1,22 @@
+# R and the R packages of the benchmarks and reference fixtures, from conda-forge:
+#
+#   micromamba create -p benchmarks/external/.r -f benchmarks/external/environment.yml
+#   PATH=benchmarks/external/.r/bin:$PATH benchmarks/external/.r/bin/Rscript \
+#       -e 'install.packages("MatchIt", repos = "https://cloud.r-project.org")'
+#
+# conda-forge's r-matchit was 4.7.2 (Nov 2026), which predates m.order =
+# "closest"; the fixtures were made with MatchIt 4.8.2 built from CRAN source,
+# which needs the compilers below.
+name: match-stream-benchmarks-r
+channels:
+  - conda-forge
+dependencies:
+  - r-base=4.5.3
+  - r-arrow
+  - r-jsonlite
+  - r-rcpp
+  - r-rcppprogress
+  - r-matching=4.10_15
+  - cxx-compiler
+  - c-compiler
+  - make

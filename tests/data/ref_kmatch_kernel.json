@@ -1,0 +1,9 @@
+{
+  "stata_version": "18",
+  "kernel_att_pm": {"est": 0.96221911524609993, "se": 0.028841770082326662, "N": 20000, "bwidth": [0.0021521780789385552], "options": "att kernel(epan)"},
+  "ridge_att_pm": {"est": 0.96443721568733443, "se": 0.029286018181698136, "N": 20000, "bwidth": [0.0021521780789385552], "options": "att kernel(epan) ridge"},
+  "kernel_atc_fixed": {"est": 0.99745256204987565, "se": 0.02983926677375107, "N": 20000, "bwidth": [0.01], "options": "atc kernel(biweight) bwidth(0.01)"},
+  "ll_att_fixed": {"est": 0.9789395674758441, "se": 0.043280629871795553, "N": 20000, "bwidth": [0.02], "options": "att kernel(epan) ridge(0) bwidth(0.02)"},
+  "kernel_att_cv": {"est": 0.99641865224339043, "se": 0.026431740377249789, "N": 20000, "bwidth": [0.055157970218421337], "options": "att kernel(epan) bwidth(cv y)"},
+  "kernel_att_cvw": {"est": 1.0077193617924938, "se": 0.026233081773537673, "N": 20000, "bwidth": [0.075842209050329346], "options": "att kernel(epan) bwidth(cv y, weighted)"}
+}

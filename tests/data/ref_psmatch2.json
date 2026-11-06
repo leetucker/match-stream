@@ -1,0 +1,14 @@
+{
+  "stata_version": "18",
+  "rep_n1": {"rc": 0, "est": 0.95267180846761446, "se": 0.035183215358644278, "ate": null, "atu": null, "matched_treated": 5048, "options": "neighbor(1)"},
+  "rep_n1_ties": {"rc": 0, "est": 0.95267180846761446, "se": 0.035183215358644278, "ate": null, "atu": null, "matched_treated": 5048, "options": "neighbor(1) ties"},
+  "rep_n3_cal": {"rc": 0, "est": 0.94538765756906273, "se": 0.029550021417169624, "ate": null, "atu": null, "matched_treated": 5046, "options": "neighbor(3) caliper(0.01)"},
+  "rep_n1_common": {"rc": 0, "est": 0.950295927994806, "se": 0.035153668546457607, "ate": null, "atu": null, "matched_treated": 5045, "options": "neighbor(1) common"},
+  "rep_n1_ate": {"rc": 0, "est": 0.95267180846761446, "se": 0.035183215358644278, "ate": 0.96600140585900196, "atu": 0.97050166051601927, "matched_treated": 3885, "options": "neighbor(1) ate"},
+  "rep_n1_ai1": {"rc": 0, "est": 0.95267180846761446, "se": 0.031578191591636912, "ate": null, "atu": null, "matched_treated": 5048, "options": "neighbor(1) ai(1) population"},
+  "rep_n1_ai1_sample": {"rc": 0, "est": 0.95267180846761446, "se": 0.031494569482717678, "ate": null, "atu": null, "matched_treated": 5048, "options": "neighbor(1) ai(1)"},
+  "wor_asc": {"rc": 0, "est": 0.97460799431086631, "se": 0.030148140052035661, "ate": null, "atu": null, "matched_treated": 5048, "options": "noreplacement"},
+  "wor_desc": {"rc": 0, "est": 0.98581572383405125, "se": 0.030161393176639607, "ate": null, "atu": null, "matched_treated": 5048, "options": "noreplacement descending"},
+  "wor_cal": {"rc": 0, "est": 0.95585657549930625, "se": 0.030366388344151427, "ate": null, "atu": null, "matched_treated": 4904, "options": "noreplacement caliper(0.005)"},
+  "mahal": {"rc": 0, "est": 1.0105056914538537, "se": 0.034649456496453492, "ate": null, "atu": null, "matched_treated": 5048, "options": "mahalanobis(x1 x2 x3)"}
+}

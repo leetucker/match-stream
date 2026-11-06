@@ -1,0 +1,28 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+.pytest_cache/
+.ruff_cache/
+docs/_build/
+benchmarks/data/
+benchmarks/results/work/
+benchmarks/results/*.log
+benchmarks/results/logs/
+benchmarks/external/.r/
+# EC2 benchmark tooling, kept out of the public repository (as in hdfe-stream)
+benchmarks/ec2/
+benchmarks/external/.pymatchit/
+benchmarks/external/.fastmatch/
+# Stata's logs carry the path of the machine they ran on
+tests/reference/stata/*.log
+examples/output/
+*.bak
+uv.lock
+
+# instructions and state for the agent sessions that built the package
+CLAUDE.md
+PLAN.md
+NEXT.md

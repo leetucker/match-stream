@@ -1,0 +1,9 @@
+{
+  "stata_version": "18",
+  "lone_treated_ate_vc1": {"rc": 198},
+  "lone_treated_ate_vc2": {"rc": 459},
+  "lone_treated_ate_iid": {"rc": 0, "est": 0.93091374513345293, "se": 0.061052504567695107, "N": 19827, "cmd": "teffects nnmatch (y ps) (d), ate nneighbor(1) ematch(r i) vce(iid) generate(_m)"},
+  "lone_control_atet_vc1": {"rc": 198},
+  "lone_control_atet_vc2": {"rc": 459},
+  "lone_control_atet_iid": {"rc": 0, "est": 0.93648774424508485, "se": 0.057297902178203033, "N": 19228, "cmd": "teffects nnmatch (y ps) (d), atet nneighbor(1) ematch(r i) vce(iid) generate(_m)"}
+}

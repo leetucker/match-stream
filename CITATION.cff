@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this software in your research, please cite it as below."
+type: software
+title: "match-stream"
+abstract: "Out-of-core matching for large data: nearest-neighbor matching with or without replacement, calipers, exact strata, Mahalanobis, kernel, ridge and coarsened exact matching, with Abadie-Imbens inference. Conventions follow R's MatchIt; results are tested against MatchIt and Matching."
+authors:
+  - family-names: Tucker
+    given-names: Lee
+    email: lee.c.tucker@census.gov
+license: MIT
+repository-code: "https://github.com/leetucker/match-stream"
+url: "https://github.com/leetucker/match-stream"
+keywords:
+  - econometrics
+  - matching
+  - propensity score
+  - treatment effects

@@ -1,0 +1,21 @@
+{
+  "stata_version": "18",
+  "logit_coef": {"x1": 0.52336094125702226, "x2": -0.31815080779901478, "x3": 0.20639317133351473, "Intercept": -1.1902420968037766},
+  "probit_coef": {"x1": 0.30693622104657109, "x2": -0.18498490154854297, "x3": 0.12101460640481131, "Intercept": -0.71751592157046817},
+  "psm_atet_logit_m1": {"est": 0.9873450039277647, "se": 0.028880495421574785, "N": 20000, "cmd": "teffects psmatch (y) (d x1 x2 x3, logit), atet nneighbor(1) vce(robust) generate(_m)"},
+  "psm_atet_logit_m1_known": {"est": 0.98734500392776325, "se": 0.032676600552930389, "N": 20000, "cmd": "teffects nnmatch (y ps_logit) (d), atet nneighbor(1) vce(robust) generate(_m)"},
+  "psm_ate_logit_m1": {"est": 1.0169936360018965, "se": 0.023781427207111308, "N": 20000, "cmd": "teffects psmatch (y) (d x1 x2 x3, logit), ate nneighbor(1) vce(robust) generate(_m)"},
+  "psm_ate_logit_m1_known": {"est": 1.0169936360018956, "se": 0.028603431443844314, "N": 20000, "cmd": "teffects nnmatch (y ps_logit) (d), ate nneighbor(1) vce(robust) generate(_m)"},
+  "psm_atet_logit_m4": {"est": 1.0077090854879607, "se": 0.021197959223956227, "N": 20000, "cmd": "teffects psmatch (y) (d x1 x2 x3, logit), atet nneighbor(4) vce(robust) generate(_m)"},
+  "psm_atet_logit_m4_known": {"est": 1.0077090854879598, "se": 0.026557428746856255, "N": 20000, "cmd": "teffects nnmatch (y ps_logit) (d), atet nneighbor(4) vce(robust) generate(_m)"},
+  "psm_ate_probit_m1": {"est": 1.0670844871462906, "se": 0.023998861209743275, "N": 20000, "cmd": "teffects psmatch (y) (d x1 x2 x3, probit), ate nneighbor(1) vce(robust) generate(_m)"},
+  "psm_ate_probit_m1_known": {"est": 1.0670844871462897, "se": 0.028778495679371661, "N": 20000, "cmd": "teffects nnmatch (y ps_probit) (d), ate nneighbor(1) vce(robust) generate(_m)"},
+  "psm_atet_logit_m1_iid": {"est": 0.9873450039277647, "se": 0.032597508691585807, "N": 20000, "cmd": "teffects psmatch (y) (d x1 x2 x3, logit), atet nneighbor(1) vce(iid) generate(_m)"},
+  "psm_atet_logit_m1_iid_known": {"est": 0.98734500392776325, "se": 0.032597508691586029, "N": 20000, "cmd": "teffects nnmatch (y ps_logit) (d), atet nneighbor(1) vce(iid) generate(_m)"},
+  "nnm_atet_ps_m1_iid": {"est": 0.96228368691213195, "se": 0.032378964637936006, "N": 20000, "cmd": "teffects nnmatch (y ps) (d), atet nneighbor(1) ematch(r i) vce(iid) generate(_m)"},
+  "nnm_atet_ps_m4_vc4": {"est": 0.96285666178273688, "se": 0.026186510947476788, "N": 20000, "cmd": "teffects nnmatch (y ps) (d), atet nneighbor(4) ematch(r i) vce(robust, nn(4)) generate(_m)"},
+  "nnm_ate_ps_m2_iid": {"est": 0.99636318036435367, "se": 0.026782676920260033, "N": 20000, "cmd": "teffects nnmatch (y ps) (d), ate nneighbor(2) ematch(r i) vce(iid) generate(_m)"},
+  "nnm_atet_ps_biasadj_iid": {"est": 0.96865463079832681, "se": 0.023480668600864528, "N": 20000, "cmd": "teffects nnmatch (y ps) (d), atet nneighbor(1) ematch(r i) vce(iid) biasadj(x1 x2 x3) generate(_m)"},
+  "nnm_atet_maha_m1_iid": {"est": 1.0042784830298677, "se": 0.022854862407771778, "N": 20000, "cmd": "teffects nnmatch (y x1 x2 x3) (d), atet nneighbor(1) ematch(r i) metric(maha) vce(iid) generate(_m)"},
+  "nnm_atet_ps_cal_iid_rc": 459, "nnm_atet_ps_cal_iid_n_osample": 149
+}

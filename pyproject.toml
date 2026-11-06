@@ -1,0 +1,94 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "match-stream"
+version = "0.1.0.dev0"
+description = "Out-of-core matching: nearest-neighbor (with or without replacement), calipers, exact strata, Mahalanobis, kernel and coarsened exact matching, with Abadie-Imbens inference"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE.md"]
+authors = [{ name = "Lee Tucker" }]
+keywords = ["econometrics", "matching", "propensity score", "nearest neighbor", "Mahalanobis",
+            "coarsened exact matching", "Abadie-Imbens", "treatment effects", "out-of-core"]
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Science/Research",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Programming Language :: Python :: 3.15",
+    "Topic :: Scientific/Engineering",
+    "Typing :: Typed",
+]
+requires-python = ">=3.10"
+dependencies = [
+    # the score model (feglm_stream), the row store and group iteration, the
+    # profile and the result base classes (hdfe_stream.core's stable names)
+    "hdfe-stream[formula]>=0.9.0",
+    "stream-limits>=0.1.1",     # thread and memory limits for jobs on a scheduler
+    "polars>=1.37,!=1.41.*",
+    "numpy>=1.24",
+    "numba>=0.59",
+    "pyarrow>=14.0",
+    "scipy>=1.11",              # cKDTree for Mahalanobis matching
+    "threadpoolctl>=3.1",
+]
+
+[project.urls]
+Homepage = "https://github.com/leetucker/match-stream"
+Source = "https://github.com/leetucker/match-stream"
+Issues = "https://github.com/leetucker/match-stream/issues"
+Documentation = "https://leetucker.github.io/match-stream/"
+Changelog = "https://github.com/leetucker/match-stream/blob/main/CHANGELOG.md"
+
+[project.optional-dependencies]
+# benchmarks/: pyarrow writes the simulated data, matplotlib draws the figures;
+# R, pymatchit and fastmatch live in environments of their own (see
+# benchmarks/README.md)
+benchmark = [
+    "matplotlib>=3.7",
+    "pyarrow>=14",
+]
+# docs/: the documentation site, built with Sphinx (see docs/conf.py)
+docs = [
+    "sphinx>=8.0",
+    "myst-parser>=4.0",
+    "furo>=2024.8.6",
+    "sphinx-copybutton>=0.5",
+    "sphinx-design>=0.6",
+]
+test = [
+    "pytest>=7.0",
+    "stream-limits[testing]>=0.2.1",   # resource_runner, for tests/test_resources.py
+    "pandas>=2.0",
+]
+
+[tool.setuptools.package-data]
+match_stream = ["py.typed"]
+
+[tool.setuptools.packages.find]
+include = ["match_stream*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# memory tests (tests/test_resources.py) are slow: run them with `pytest -m resource`
+addopts = "-m 'not resource'"
+filterwarnings = [
+    "ignore::DeprecationWarning",
+    "ignore::FutureWarning",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+extend-exclude = ["benchmarks/external/.r"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+ignore = ["B905", "E741"]

@@ -1,0 +1,2 @@
+include LICENSE.md README.md CHANGELOG.md CITATION.cff
+include match_stream/py.typed

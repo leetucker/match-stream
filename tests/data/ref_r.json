@@ -1,0 +1,757 @@
+{
+  "versions": {
+    "R": "R version 4.5.3 (2026-03-11)",
+    "MatchIt": "4.8.2",
+    "Matching": "4.10.15"
+  },
+  "matchit": {
+    "nn_ps_rep": {
+      "desc": "1-NN on ps, replace, exact r+i, caliper 0.2 SD of ps",
+      "n_matched_treated": 5008,
+      "n_matched_control": 3737,
+      "balance_all": [
+        {
+          "term": "distance",
+          "Means Treated": 0.3112335158913507,
+          "Means Control": 0.2370173265073966,
+          "Std. Mean Diff.": 0.5858830832660414,
+          "Var. Ratio": 1.377026020006231,
+          "eCDF Mean": 0.173974971361076,
+          "eCDF Max": 0.2528594407545243,
+          "Std. Pair Dist.": "NA"
+        },
+        {
+          "term": "x1",
+          "Means Treated": 0.3658458161266403,
+          "Means Control": -0.1152306189515064,
+          "Std. Mean Diff.": 0.5003222661793369,
+          "Var. Ratio": 0.9684566917989644,
+          "eCDF Mean": 0.1368076603716149,
+          "eCDF Max": 0.2041989199034374,
+          "Std. Pair Dist.": "NA"
+        },
+        {
+          "term": "x2",
+          "Means Treated": -0.2358354919627692,
+          "Means Control": 0.06128590604624656,
+          "Std. Mean Diff.": -0.2920846543009954,
+          "Var. Ratio": 1.069910146909586,
+          "eCDF Mean": 0.08132725069933248,
+          "eCDF Max": 0.1140911349493234,
+          "Std. Pair Dist.": "NA"
+        },
+        {
+          "term": "x3",
+          "Means Treated": 0.1473035302306164,
+          "Means Control": -0.0425576921112008,
+          "Std. Mean Diff.": 0.1897531462735363,
+          "Var. Ratio": 1.008939176157208,
+          "eCDF Mean": 0.05156094059892866,
+          "eCDF Max": 0.07565201778284271,
+          "Std. Pair Dist.": "NA"
+        },
+        {
+          "term": "r",
+          "Means Treated": 2.102614896988907,
+          "Means Control": 1.968031032637774,
+          "Std. Mean Diff.": 0.09557868468165677,
+          "Var. Ratio": 0.9944680160696827,
+          "eCDF Mean": 0.02691677287022643,
+          "eCDF Max": 0.04018331455162591,
+          "Std. Pair Dist.": "NA"
+        },
+        {
+          "term": "i",
+          "Means Treated": 1.615689381933439,
+          "Means Control": 1.4767924023542,
+          "Std. Mean Diff.": 0.1255771892527167,
+          "Var. Ratio": 0.9948287454614144,
+          "eCDF Mean": 0.03472424489480971,
+          "eCDF Max": 0.05380418607372429,
+          "Std. Pair Dist.": "NA"
+        }
+      ],
+      "balance_matched": [
+        {
+          "term": "distance",
+          "Means Treated": 0.3084410317294932,
+          "Means Control": 0.3084063396153365,
+          "Std. Mean Diff.": 0.0002738691244572534,
+          "Var. Ratio": 1.00096192836978,
+          "eCDF Mean": 0.0003458566293929722,
+          "eCDF Max": 0.002995207667731647,
+          "Std. Pair Dist.": 0.005533884718088395
+        },
+        {
+          "term": "x1",
+          "Means Treated": 0.3505416284422566,
+          "Means Control": 0.3439393737755306,
+          "Std. Mean Diff.": 0.006866382919406271,
+          "Var. Ratio": 0.9744656537920779,
+          "eCDF Mean": 0.005204912140575081,
+          "eCDF Max": 0.01437699680511183,
+          "Std. Pair Dist.": 0.6839339075780488
+        },
+        {
+          "term": "x2",
+          "Means Treated": -0.223629939758425,
+          "Means Control": -0.2141086636194739,
+          "Std. Mean Diff.": -0.009359873331861061,
+          "Var. Ratio": 1.067072498973244,
+          "eCDF Mean": 0.006694828274760389,
+          "eCDF Max": 0.01677316293929712,
+          "Std. Pair Dist.": 0.9702246678002885
+        },
+        {
+          "term": "x3",
+          "Means Treated": 0.1416064466620465,
+          "Means Control": 0.1718142912222769,
+          "Std. Mean Diff.": -0.03019064913174303,
+          "Var. Ratio": 1.021117703954478,
+          "eCDF Mean": 0.01008651158146964,
+          "eCDF Max": 0.03095047923322683,
+          "Std. Pair Dist.": 1.079904669037898
+        },
+        {
+          "term": "r",
+          "Means Treated": 2.101837060702875,
+          "Means Control": 2.101837060702875,
+          "Std. Mean Diff.": 0,
+          "Var. Ratio": 0.99985611198635,
+          "eCDF Mean": 1.099381002900302e-17,
+          "eCDF Max": 2.016616040823038e-17,
+          "Std. Pair Dist.": 0
+        },
+        {
+          "term": "i",
+          "Means Treated": 1.616813099041533,
+          "Means Control": 1.616813099041533,
+          "Std. Mean Diff.": 0,
+          "Var. Ratio": 0.9998561119863502,
+          "eCDF Mean": 1.089623183347932e-17,
+          "eCDF Max": 2.016616040823038e-17,
+          "Std. Pair Dist.": 0
+        }
+      ],
+      "nn": [
+        [14952, 14952, 2910.8709377901578, 3737, 11215, 0],
+        [5048, 5048, 5008, 5008, 40, 0]
+      ]
+    },
+    "nn_ps_rep_k3_cal": {
+      "desc": "3-NN on ps, replace, exact r+i, calipers ps 0.2 SD, |dx1|,|dx2| <= 0.25",
+      "n_matched_treated": 4181,
+      "n_matched_control": 7018,
+      "balance_all": [
+        {
+          "term": "distance",
+          "Means Treated": 0.3112335158913507,
+          "Means Control": 0.2370173265073966,
+          "Std. Mean Diff.": 0.5858830832660414,
+          "Var. Ratio": 1.377026020006231,
+          "eCDF Mean": 0.173974971361076,
+          "eCDF Max": 0.2528594407545243,
+          "Std. Pair Dist.": "NA"
+        },
+        {
+          "term": "x1",
+          "Means Treated": 0.3658458161266403,
+          "Means Control": -0.1152306189515064,
+          "Std. Mean Diff.": 0.5003222661793369,
+          "Var. Ratio": 0.9684566917989644,
+          "eCDF Mean": 0.1368076603716149,
+          "eCDF Max": 0.2041989199034374,
+          "Std. Pair Dist.": "NA"
+        },
+        {
+          "term": "x2",
+          "Means Treated": -0.2358354919627692,
+          "Means Control": 0.06128590604624656,
+          "Std. Mean Diff.": -0.2920846543009954,
+          "Var. Ratio": 1.069910146909586,
+          "eCDF Mean": 0.08132725069933248,
+          "eCDF Max": 0.1140911349493234,
+          "Std. Pair Dist.": "NA"
+        },
+        {
+          "term": "x3",
+          "Means Treated": 0.1473035302306164,
+          "Means Control": -0.0425576921112008,
+          "Std. Mean Diff.": 0.1897531462735363,
+          "Var. Ratio": 1.008939176157208,
+          "eCDF Mean": 0.05156094059892866,
+          "eCDF Max": 0.07565201778284271,
+          "Std. Pair Dist.": "NA"
+        },
+        {
+          "term": "r",
+          "Means Treated": 2.102614896988907,
+          "Means Control": 1.968031032637774,
+          "Std. Mean Diff.": 0.09557868468165677,
+          "Var. Ratio": 0.9944680160696827,
+          "eCDF Mean": 0.02691677287022643,
+          "eCDF Max": 0.04018331455162591,
+          "Std. Pair Dist.": "NA"
+        },
+        {
+          "term": "i",
+          "Means Treated": 1.615689381933439,
+          "Means Control": 1.4767924023542,
+          "Std. Mean Diff.": 0.1255771892527167,
+          "Var. Ratio": 0.9948287454614144,
+          "eCDF Mean": 0.03472424489480971,
+          "eCDF Max": 0.05380418607372429,
+          "Std. Pair Dist.": "NA"
+        }
+      ],
+      "balance_matched": [
+        {
+          "term": "distance",
+          "Means Treated": 0.2849272462528695,
+          "Means Control": 0.2844262726458151,
+          "Std. Mean Diff.": 0.003954823926858487,
+          "Var. Ratio": 1.008092517167298,
+          "eCDF Mean": 0.002210378298652624,
+          "eCDF Max": 0.009806266443434549,
+          "Std. Pair Dist.": 0.05854979602271235
+        },
+        {
+          "term": "x1",
+          "Means Treated": 0.220260292860961,
+          "Means Control": 0.2193461873749655,
+          "Std. Mean Diff.": 0.0009506749758090082,
+          "Var. Ratio": 1.013813892035837,
+          "eCDF Mean": 0.002385364346647526,
+          "eCDF Max": 0.009885992186877106,
+          "Std. Pair Dist.": 0.1281809856211733
+        },
+        {
+          "term": "x2",
+          "Means Treated": -0.1308439369014649,
+          "Means Control": -0.1291193856661466,
+          "Std. Mean Diff.": -0.00169531698076155,
+          "Var. Ratio": 1.016841988765192,
+          "eCDF Mean": 0.002164356613250414,
+          "eCDF Max": 0.008769831778681342,
+          "Std. Pair Dist.": 0.122233237292027
+        },
+        {
+          "term": "x3",
+          "Means Treated": 0.08134531262889143,
+          "Means Control": 0.07752497746636106,
+          "Std. Mean Diff.": 0.003818160485685944,
+          "Var. Ratio": 1.190982884981997,
+          "eCDF Mean": 0.0135288029179622,
+          "eCDF Max": 0.03145180578808895,
+          "Std. Pair Dist.": 0.3961208074334504
+        },
+        {
+          "term": "r",
+          "Means Treated": 2.105716335804831,
+          "Means Control": 2.105716335804832,
+          "Std. Mean Diff.": -4.440892098500626e-16,
+          "Var. Ratio": 1.000037389720669,
+          "eCDF Mean": 2.160543879220489e-17,
+          "eCDF Max": 3.446407655788297e-17,
+          "Std. Pair Dist.": 0
+        },
+        {
+          "term": "i",
+          "Means Treated": 1.596747189667544,
+          "Means Control": 1.596747189667544,
+          "Std. Mean Diff.": 0,
+          "Var. Ratio": 1.000037389720669,
+          "eCDF Mean": 2.161289268214073e-17,
+          "eCDF Max": 3.446407655788297e-17,
+          "Std. Pair Dist.": 0
+        }
+      ],
+      "nn": [
+        [14952, 14952, 4955.4885032127995, 7018, 7934, 0],
+        [5048, 5048, 4181, 4181, 867, 0]
+      ]
+    },
+    "nn_ps_wor_largest": {
+      "desc": "1-NN on ps, without replacement, m.order largest, exact r+i, calipers as k3",
+      "n_matched_treated": 4012,
+      "n_matched_control": 4012,
+      "balance_all": [
+        {
+          "term": "distance",
+          "Means Treated": 0.3112335158913507,
+          "Means Control": 0.2370173265073966,
+          "Std. Mean Diff.": 0.5858830832660414,
+          "Var. Ratio": 1.377026020006231,
+          "eCDF Mean": 0.173974971361076,
+          "eCDF Max": 0.2528594407545243,
+          "Std. Pair Dist.": "NA"
+        },
+        {
+          "term": "x1",
+          "Means Treated": 0.3658458161266403,
+          "Means Control": -0.1152306189515064,
+          "Std. Mean Diff.": 0.5003222661793369,
+          "Var. Ratio": 0.9684566917989644,
+          "eCDF Mean": 0.1368076603716149,
+          "eCDF Max": 0.2041989199034374,
+          "Std. Pair Dist.": "NA"
+        },
+        {
+          "term": "x2",
+          "Means Treated": -0.2358354919627692,
+          "Means Control": 0.06128590604624656,
+          "Std. Mean Diff.": -0.2920846543009954,
+          "Var. Ratio": 1.069910146909586,
+          "eCDF Mean": 0.08132725069933248,
+          "eCDF Max": 0.1140911349493234,
+          "Std. Pair Dist.": "NA"
+        },
+        {
+          "term": "x3",
+          "Means Treated": 0.1473035302306164,
+          "Means Control": -0.0425576921112008,
+          "Std. Mean Diff.": 0.1897531462735363,
+          "Var. Ratio": 1.008939176157208,
+          "eCDF Mean": 0.05156094059892866,
+          "eCDF Max": 0.07565201778284271,
+          "Std. Pair Dist.": "NA"
+        },
+        {
+          "term": "r",
+          "Means Treated": 2.102614896988907,
+          "Means Control": 1.968031032637774,
+          "Std. Mean Diff.": 0.09557868468165677,
+          "Var. Ratio": 0.9944680160696827,
+          "eCDF Mean": 0.02691677287022643,
+          "eCDF Max": 0.04018331455162591,
+          "Std. Pair Dist.": "NA"
+        },
+        {
+          "term": "i",
+          "Means Treated": 1.615689381933439,
+          "Means Control": 1.4767924023542,
+          "Std. Mean Diff.": 0.1255771892527167,
+          "Var. Ratio": 0.9948287454614144,
+          "eCDF Mean": 0.03472424489480971,
+          "eCDF Max": 0.05380418607372429,
+          "Std. Pair Dist.": "NA"
+        }
+      ],
+      "balance_matched": [
+        {
+          "term": "distance",
+          "Means Treated": 0.2804657692101418,
+          "Means Control": 0.2789805023678663,
+          "Std. Mean Diff.": 0.01172510639859574,
+          "Var. Ratio": 1.020477648023886,
+          "eCDF Mean": 0.003331717347956131,
+          "eCDF Max": 0.01495513459621137,
+          "Std. Pair Dist.": 0.04690675999705322
+        },
+        {
+          "term": "x1",
+          "Means Treated": 0.1913857888817567,
+          "Means Control": 0.1887507270340682,
+          "Std. Mean Diff.": 0.002740479514329277,
+          "Var. Ratio": 1.013249470512589,
+          "eCDF Mean": 0.002685032402791625,
+          "eCDF Max": 0.009222333000997009,
+          "Std. Pair Dist.": 0.1279659502783397
+        },
+        {
+          "term": "x2",
+          "Means Treated": -0.114924825209963,
+          "Means Control": -0.1149941838226881,
+          "Std. Mean Diff.": 6.818285911535812e-05,
+          "Var. Ratio": 1.014995398308012,
+          "eCDF Mean": 0.002172295613160518,
+          "eCDF Max": 0.009471585244267198,
+          "Std. Pair Dist.": 0.1238338164623182
+        },
+        {
+          "term": "x3",
+          "Means Treated": 0.08425072805513392,
+          "Means Control": 0.05755954889328249,
+          "Std. Mean Diff.": 0.02667598555008588,
+          "Var. Ratio": 1.136680564865641,
+          "eCDF Mean": 0.01303740029910269,
+          "eCDF Max": 0.03589232303090727,
+          "Std. Pair Dist.": 0.3791263710214208
+        },
+        {
+          "term": "r",
+          "Means Treated": 2.086490528414756,
+          "Means Control": 2.086490528414756,
+          "Std. Mean Diff.": 0,
+          "Var. Ratio": 1,
+          "eCDF Mean": 0,
+          "eCDF Max": 0,
+          "Std. Pair Dist.": 0
+        },
+        {
+          "term": "i",
+          "Means Treated": 1.590229312063808,
+          "Means Control": 1.590229312063808,
+          "Std. Mean Diff.": 0,
+          "Var. Ratio": 1,
+          "eCDF Mean": 0,
+          "eCDF Max": 0,
+          "Std. Pair Dist.": 0
+        }
+      ],
+      "nn": [
+        [14952, 14952, 4012, 4012, 10940, 0],
+        [5048, 5048, 4012, 4012, 1036, 0]
+      ]
+    },
+    "nn_ps_wor_smallest": {
+      "desc": "as wor_largest, m.order smallest",
+      "n_matched_treated": 3980,
+      "n_matched_control": 3980
+    },
+    "nn_ps_wor_closest": {
+      "desc": "as wor_largest, m.order closest",
+      "n_matched_treated": 3938,
+      "n_matched_control": 3938
+    },
+    "nn_ps_wor_data": {
+      "desc": "as wor_largest, m.order data",
+      "n_matched_treated": 3985,
+      "n_matched_control": 3985
+    },
+    "nn_ps_wor_k2": {
+      "desc": "2-NN on ps, without replacement, m.order largest, exact r+i, caliper 0.2 SD",
+      "n_matched_treated": 4913,
+      "n_matched_control": 8903
+    },
+    "nn_maha_rep": {
+      "desc": "1-NN Mahalanobis on x1..x3 (MatchIt's covariance), replace, exact r+i",
+      "n_matched_treated": 5048,
+      "n_matched_control": 3925
+    },
+    "nn_glm_rep": {
+      "desc": "1-NN on a logit score fitted by MatchIt (d ~ x1+x2+x3+factor(r)+factor(i)), replace, caliper 0.2 SD",
+      "n_matched_treated": 5046,
+      "n_matched_control": 3727,
+      "distance_head": [0.3286672993793433, 0.2108259094466957, 0.1400387784439383, 0.1999417864726666, 0.3609965368191016, 0.3045031241929897, 0.2539087532589224, 0.2870735963536264, 0.2907514994501429, 0.09194952148853322]
+    },
+    "cem5": {
+      "desc": "CEM: 5 equal-width bins on x1..x3, exact r and i",
+      "n_matched_treated": 4887,
+      "n_matched_control": 14136,
+      "balance_all": [
+        {
+          "term": "x1",
+          "Means Treated": 0.3658458161266403,
+          "Means Control": -0.1152306189515064,
+          "Std. Mean Diff.": 0.5003222661793369,
+          "Var. Ratio": 0.9684566917989644,
+          "eCDF Mean": 0.1368076603716149,
+          "eCDF Max": 0.2041989199034374,
+          "Std. Pair Dist.": "NA"
+        },
+        {
+          "term": "x2",
+          "Means Treated": -0.2358354919627692,
+          "Means Control": 0.06128590604624656,
+          "Std. Mean Diff.": -0.2920846543009954,
+          "Var. Ratio": 1.069910146909586,
+          "eCDF Mean": 0.08132725069933248,
+          "eCDF Max": 0.1140911349493234,
+          "Std. Pair Dist.": "NA"
+        },
+        {
+          "term": "x3",
+          "Means Treated": 0.1473035302306164,
+          "Means Control": -0.0425576921112008,
+          "Std. Mean Diff.": 0.1897531462735363,
+          "Var. Ratio": 1.008939176157208,
+          "eCDF Mean": 0.05156094059892866,
+          "eCDF Max": 0.07565201778284271,
+          "Std. Pair Dist.": "NA"
+        },
+        {
+          "term": "rf0",
+          "Means Treated": 0.1776941362916006,
+          "Means Control": 0.2062600321027287,
+          "Std. Mean Diff.": -0.07472993523551372,
+          "Var. Ratio": "NA",
+          "eCDF Mean": 0.02856589581112809,
+          "eCDF Max": 0.02856589581112809,
+          "Std. Pair Dist.": "NA"
+        },
+        {
+          "term": "rf1",
+          "Means Treated": 0.1911648177496038,
+          "Means Control": 0.2027822364901017,
+          "Std. Mean Diff.": -0.0295444318689789,
+          "Var. Ratio": "NA",
+          "eCDF Mean": 0.01161741874049785,
+          "eCDF Max": 0.01161741874049785,
+          "Std. Pair Dist.": "NA"
+        },
+        {
+          "term": "rf2",
+          "Means Treated": 0.2028526148969889,
+          "Means Control": 0.1993713215623328,
+          "Std. Mean Diff.": 0.008657270759960086,
+          "Var. Ratio": "NA",
+          "eCDF Mean": 0.003481293334656105,
+          "eCDF Max": 0.003481293334656105,
+          "Std. Pair Dist.": "NA"
+        },
+        {
+          "term": "rf3",
+          "Means Treated": 0.2074088748019017,
+          "Means Control": 0.1998394863563403,
+          "Std. Mean Diff.": 0.01866906305846664,
+          "Var. Ratio": "NA",
+          "eCDF Mean": 0.007569388445561431,
+          "eCDF Max": 0.007569388445561431,
+          "Std. Pair Dist.": "NA"
+        },
+        {
+          "term": "rf4",
+          "Means Treated": 0.2208795562599049,
+          "Means Control": 0.1917469234884965,
+          "Std. Mean Diff.": 0.07022628161962899,
+          "Var. Ratio": "NA",
+          "eCDF Mean": 0.02913263277140837,
+          "eCDF Max": 0.02913263277140837,
+          "Std. Pair Dist.": "NA"
+        },
+        {
+          "term": "if_0",
+          "Means Treated": 0.2109746434231379,
+          "Means Control": 0.2519395398608882,
+          "Std. Mean Diff.": -0.1004040544170701,
+          "Var. Ratio": "NA",
+          "eCDF Mean": 0.04096489643775031,
+          "eCDF Max": 0.04096489643775031,
+          "Std. Pair Dist.": "NA"
+        },
+        {
+          "term": "if_1",
+          "Means Treated": 0.2446513470681458,
+          "Means Control": 0.2574906367041199,
+          "Std. Mean Diff.": -0.02986712783780537,
+          "Var. Ratio": "NA",
+          "eCDF Mean": 0.01283928963597405,
+          "eCDF Max": 0.01283928963597405,
+          "Std. Pair Dist.": "NA"
+        },
+        {
+          "term": "if_2",
+          "Means Treated": 0.2620839936608558,
+          "Means Control": 0.2524077046548956,
+          "Std. Mean Diff.": 0.02200316303602123,
+          "Var. Ratio": "NA",
+          "eCDF Mean": 0.009676289005960126,
+          "eCDF Max": 0.009676289005960126,
+          "Std. Pair Dist.": "NA"
+        },
+        {
+          "term": "if_3",
+          "Means Treated": 0.2822900158478606,
+          "Means Control": 0.2381621187800963,
+          "Std. Mean Diff.": 0.09803721793752075,
+          "Var. Ratio": "NA",
+          "eCDF Mean": 0.04412789706776427,
+          "eCDF Max": 0.04412789706776427,
+          "Std. Pair Dist.": "NA"
+        }
+      ],
+      "balance_matched": [
+        {
+          "term": "x1",
+          "Means Treated": 0.3417901252055767,
+          "Means Control": 0.2352482951951846,
+          "Std. Mean Diff.": 0.110804117489218,
+          "Var. Ratio": 0.9763386637589975,
+          "eCDF Mean": 0.03194350784372143,
+          "eCDF Max": 0.07539834649331206,
+          "Std. Pair Dist.": 0.5475214587432856
+        },
+        {
+          "term": "x2",
+          "Means Treated": -0.2191171844539575,
+          "Means Control": -0.1621029804187711,
+          "Std. Mean Diff.": -0.05604771042225139,
+          "Var. Ratio": 1.031495269575954,
+          "eCDF Mean": 0.01457766499273969,
+          "eCDF Max": 0.03036118456824861,
+          "Std. Pair Dist.": 0.4741208855488795
+        },
+        {
+          "term": "x3",
+          "Means Treated": 0.1256569273352572,
+          "Means Control": 0.08587503849729183,
+          "Std. Mean Diff.": 0.03975924350743731,
+          "Var. Ratio": 1.001968840963309,
+          "eCDF Mean": 0.01051450689851852,
+          "eCDF Max": 0.02546079473319097,
+          "Std. Pair Dist.": 0.4828028548645162
+        },
+        {
+          "term": "rf0",
+          "Means Treated": 0.1757724575404133,
+          "Means Control": 0.1757724575404133,
+          "Std. Mean Diff.": 0,
+          "Var. Ratio": "NA",
+          "eCDF Mean": 0,
+          "eCDF Max": 0,
+          "Std. Pair Dist.": 0
+        },
+        {
+          "term": "rf1",
+          "Means Treated": 0.1913239206056886,
+          "Means Control": 0.1913239206056886,
+          "Std. Mean Diff.": 0,
+          "Var. Ratio": "NA",
+          "eCDF Mean": 0,
+          "eCDF Max": 0,
+          "Std. Pair Dist.": 0
+        },
+        {
+          "term": "rf2",
+          "Means Treated": 0.2025782688766114,
+          "Means Control": 0.2025782688766114,
+          "Std. Mean Diff.": 0,
+          "Var. Ratio": "NA",
+          "eCDF Mean": 0,
+          "eCDF Max": 0,
+          "Std. Pair Dist.": 0
+        },
+        {
+          "term": "rf3",
+          "Means Treated": 0.2095355023531819,
+          "Means Control": 0.2095355023531819,
+          "Std. Mean Diff.": 0,
+          "Var. Ratio": "NA",
+          "eCDF Mean": 0,
+          "eCDF Max": 0,
+          "Std. Pair Dist.": 0
+        },
+        {
+          "term": "rf4",
+          "Means Treated": 0.2207898506241048,
+          "Means Control": 0.2207898506241047,
+          "Std. Mean Diff.": 2.775557561562891e-17,
+          "Var. Ratio": "NA",
+          "eCDF Mean": 2.775557561562891e-17,
+          "eCDF Max": 2.775557561562891e-17,
+          "Std. Pair Dist.": 0
+        },
+        {
+          "term": "if_0",
+          "Means Treated": 0.2113771229793329,
+          "Means Control": 0.2113771229793329,
+          "Std. Mean Diff.": 0,
+          "Var. Ratio": "NA",
+          "eCDF Mean": 0,
+          "eCDF Max": 0,
+          "Std. Pair Dist.": 0
+        },
+        {
+          "term": "if_1",
+          "Means Treated": 0.2463679148762022,
+          "Means Control": 0.2463679148762022,
+          "Std. Mean Diff.": -2.775557561562891e-17,
+          "Var. Ratio": "NA",
+          "eCDF Mean": 2.775557561562891e-17,
+          "eCDF Max": 2.775557561562891e-17,
+          "Std. Pair Dist.": 0
+        },
+        {
+          "term": "if_2",
+          "Means Treated": 0.2619193779414774,
+          "Means Control": 0.2619193779414774,
+          "Std. Mean Diff.": 0,
+          "Var. Ratio": "NA",
+          "eCDF Mean": 0,
+          "eCDF Max": 0,
+          "Std. Pair Dist.": 0
+        },
+        {
+          "term": "if_3",
+          "Means Treated": 0.2803355842029875,
+          "Means Control": 0.2803355842029875,
+          "Std. Mean Diff.": 5.551115123125783e-17,
+          "Var. Ratio": "NA",
+          "eCDF Mean": 5.551115123125783e-17,
+          "eCDF Max": 5.551115123125783e-17,
+          "Std. Pair Dist.": 0
+        }
+      ],
+      "nn": [
+        [14952, 14952, 8954.0553178715163, 14136, 816, 0],
+        [5048, 5048, 4887, 4887, 161, 0]
+      ]
+    }
+  },
+  "matching": {
+    "ai_att_m1_vc0": {
+      "desc": "ATT, 1-NN on ps, replace, exact r,i, caliper 0.2 SD, Var.calc 0",
+      "est": 0.9599051211089255,
+      "se": 0.03205084355916769,
+      "se_standard": 0.02768104335468198,
+      "nobs": 20000,
+      "wnobs": 5008,
+      "n_dropped": 40
+    },
+    "ai_att_m4_vc4": {
+      "desc": "ATT, 4-NN on ps, replace, exact r,i, no caliper, Var.calc 4 (heteroskedastic)",
+      "est": 0.9628566617827363,
+      "se": 0.02618651094747679,
+      "se_standard": 0.02739283166290256,
+      "nobs": 20000,
+      "wnobs": 5048,
+      "n_dropped": 0
+    },
+    "ai_ate_m1_vc0": {
+      "desc": "ATE, 1-NN on ps, replace, exact r,i, no caliper, Var.calc 0",
+      "est": 0.989769243008862,
+      "se": 0.02892660366195477,
+      "se_standard": 0.01367034919949335,
+      "nobs": 20000,
+      "wnobs": 20000,
+      "n_dropped": 0
+    },
+    "ai_ate_m2_vc0": {
+      "desc": "ATE, 2-NN on ps, replace, exact r,i, no caliper, Var.calc 0",
+      "est": 0.9963631803643546,
+      "se": 0.02678267692025993,
+      "se_standard": 0.01366341795029251,
+      "nobs": 20000,
+      "wnobs": 20000,
+      "n_dropped": 0
+    },
+    "ai_atc_m2_vc2": {
+      "desc": "ATC, 2-NN on ps, replace, exact r,i, no caliper, Var.calc 2",
+      "est": 1.004338992624428,
+      "se": 0.02904559672897543,
+      "se_standard": 0.01576022428558796,
+      "nobs": 20000,
+      "wnobs": 14952,
+      "n_dropped": 0
+    },
+    "ai_att_biasadj": {
+      "desc": "ATT, 1-NN on ps, exact r,i, BiasAdjust on Z = x1..x3, Var.calc 0",
+      "est": 0.9684685896336452,
+      "se": 0.02348363230110916,
+      "se_standard": 0.02757108918639375,
+      "nobs": 20000,
+      "wnobs": 5048,
+      "n_dropped": 0
+    },
+    "ai_att_maha": {
+      "desc": "ATT, 1-NN Mahalanobis on x1..x3 (full-sample covariance), exact r,i, Var.calc 0",
+      "est": 1.004446549801733,
+      "se": 0.02287135354129315,
+      "se_standard": 0.02011691043312975,
+      "nobs": 20000,
+      "wnobs": 5048,
+      "n_dropped": 0
+    }
+  }
+}

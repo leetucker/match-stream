@@ -144,10 +144,7 @@ pip install match-stream
 ```
 
 Python 3.10 or later. It depends on hdfe-stream (with its formula extra),
-stream-limits, Polars, NumPy, numba, SciPy and pyarrow. On Python 3.15,
-pyfixest (which hdfe-stream's formula extra brings in) has no wheels yet: it
-builds from source with a Rust toolchain and
-`PYO3_USE_ABI3_FORWARD_COMPATIBILITY=1` set; everything else installs from wheels.
+stream-limits, Polars, NumPy, numba, SciPy and pyarrow.
 
 ## Documentation
 
